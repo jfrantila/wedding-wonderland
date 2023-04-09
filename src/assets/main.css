@@ -1,0 +1,42 @@
+:root {
+  --vt-c-white: #ffffff;
+  --vt-c-brown: rgba(88, 68, 52, 0.808);
+  --vt-c-beige: #c0ac9542;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: main-font!important;
+  font-size: 25px !important;
+  background-image: url('../images/vintage-wallpaper-background.jpg');
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'romantic';
+  src: url('./fonts/PinyonScript-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'main-font';
+  src: url('./fonts/ZtYagloThin-3z37p.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'menu-font';
+  src: url('./fonts/Garineldono01-KGD7.otf') format('truetype');
+}
+

@@ -1,18 +1,16 @@
 <template>
-    <nav class="nav-container">
-        <button @click="toggleMenubar" class="menu-bar navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navi" :title="menuBarOpen ? 'Close menu' : 'Open menu'" aria-controls="navi"
-            aria-expanded="false" aria-label="Toggle Menu">
+    <nav :class="['nav-container', darkNavMenu ? 'dark' : null]">
+        <button @click="toggleMenubar" :class="['menu-bar', 'navbar-toggler', darkNavMenu ? 'dark-hover' : 'light-hover']"
+            type="button" data-bs-toggle="collapse" data-bs-target="#navi" :title="menuBarOpen ? 'Close menu' : 'Open menu'"
+            aria-controls="navi" aria-expanded="false" aria-label="Toggle Menu">
             <NavIcon />
             <span style="verticalAlign: sub">{{ menuBarOpen ? '' : 'Menu' }}</span>
         </button>
         <div class="collapse navbar-collapse" id="navi">
             <ul class="nav">
-                <!-- <NavItem navText="Home" viewPath="/" @click-nav="changeToImage" /> -->
-                <button @click="$emit('scroll-to', 'home')" class="nav-link active menu-nav">Home</button>
-                <!-- <NavItem navText="Services" viewPath="/services" @click-nav="changeToBeige" /> -->
-                <button @click="$emit('scroll-to', 'services')" class="nav-link active menu-nav">Services</button>
-                <!-- <NavItem navText="Contact" viewPath="/contact-info" @click-nav="changeToBeige" /> -->
+                <button @click="handleClick('home', false)" class="nav-link active menu-nav">Home</button>
+                <button @click="handleClick('services', false)" class="nav-link active menu-nav">Services</button>
+                <button @click="handleClick('contact-info', true)" class="nav-link active menu-nav">Contact</button>
                 <button @click="openPortfolio" class="nav-link active menu-nav">Photo Gallery</button>
             </ul>
         </div>
@@ -44,6 +42,7 @@ export default {
     components: { NavItem, NavIcon },
     data() {
         return {
+            darkNavMenu: false,
             menuBarOpen: false,
             options: {
                 index: 0,
@@ -150,6 +149,10 @@ export default {
         openPortfolio() {
             const pswp = new PhotoSwipe(this.options)
             pswp.init()
+        },
+        handleClick(endpoint, changeColor) {
+            this.darkNavMenu = changeColor
+            this.$emit('scroll-to', endpoint)
         }
     },
 }
@@ -164,8 +167,12 @@ button.menu-bar {
     padding-left: 0;
 }
 
-.menu-bar :hover {
+.menu-bar.light-hover :hover {
     color: rgba(180, 131, 150, 0.527) !important;
+}
+
+.menu-bar.dark-hover :hover {
+    color: rgba(255, 255, 255, 0.719) !important;
 }
 
 /* Whole navigation container */
@@ -180,8 +187,8 @@ button.menu-bar {
     color: rgba(255, 255, 255, 0.719);
 }
 
-.dark-text {
-    color: #302416be;
+.dark {
+    color: #302416be !important;
 }
 
 @media (min-width: 57rem) {

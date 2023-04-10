@@ -12,7 +12,9 @@
                     </div>
                     <div class="back">
                         <div class="inner">
-                            <p>Here some text</p>
+                            <p>I offer wedding photography services all across Finland. For customers outside Finland, feel
+                                free to
+                                ask for an offer! I am ready to travel worldwide.</p>
                         </div>
                     </div>
                 </div>
@@ -27,7 +29,8 @@
                     </div>
                     <div class="back">
                         <div class="inner">
-                            <p>Here some text</p>
+                            <p>I will capture your wedding day within the required duration - from a few hours to a whole
+                                day. All tailored according to your wishes.</p>
                         </div>
                     </div>
                 </div>
@@ -42,7 +45,9 @@
                     </div>
                     <div class="back">
                         <div class="inner">
-                            <p>Here some text</p>
+                            <p>I am here to make your wedding day memorable, so you can look back after decades and
+                                recapture the emotions and love from that special day. This includes wedding portraits and
+                                photoshoots to your liking.</p>
                         </div>
                     </div>
                 </div>

@@ -1,15 +1,15 @@
 <script>
 import Navigation from './components/Navigation.vue'
-import { useBackgroundImage } from './stores/background'
 import Footer from './components/Footer.vue'
 import Services from './components/Services.vue'
-import Home from './views/Home.vue'
+import Home from './components/Home.vue'
+import ContactInfo from './components/ContactInfo.vue'
 
 export default {
   name: 'App',
-  components: { Home, Navigation, Footer, Services },
+  components: { Home, Navigation, Footer, Services, ContactInfo },
   data() {
-    return { blurBackground: true }
+    return { darkNavMenu: false }
   },
   methods: {
     scrollTo(endpointId) {
@@ -23,6 +23,7 @@ export default {
   <Navigation @scroll-to="(endpointId) => scrollTo(endpointId)" />
   <Home />
   <Services />
+  <ContactInfo />
   <Footer />
 </template>
 
@@ -37,13 +38,6 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.beige-wrapper {
-  background-image: url('./assets/vintage-wallpaper-background.jpg');
-  width: 100%;
-  height: 100%;
-  padding: 2rem;
 }
 
 .abstract-div {

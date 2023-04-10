@@ -11,8 +11,8 @@ export default {
     return { blurBackground: true }
   },
   methods: {
-    scrollToServices() {
-      window.document.querySelector('#services').scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' })
+    scrollTo(endpointId) {
+      window.document.querySelector(`#${endpointId}`).scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' })
     }
   },
   computed: {
@@ -30,7 +30,7 @@ export default {
 <template>
   <div v-if="blurBackground" class="blur-image"></div>
   <div :class="background">
-    <Navigation @to-services="scrollToServices" />
+    <Navigation @scroll-to="(endpointId) => scrollTo(endpointId)" />
     <!-- Views -->
     <div :class="blurBackground ? 'abstract-div' : null">
       <router-view />
@@ -42,7 +42,7 @@ export default {
 
 <style>
 .wrapper {
-  background-image: url('./images/7.jpg');
+  background-image: url('./assets/7.jpg');
   position: absolute;
   height: 85%;
   width: 90%;
@@ -54,14 +54,14 @@ export default {
 }
 
 .beige-wrapper {
-  background-image: url('./images/vintage-wallpaper-background.jpg');
+  background-image: url('./assets/vintage-wallpaper-background.jpg');
   width: 100%;
   height: 100%;
   padding: 2rem;
 }
 
 .blur-image {
-  background-image: url('./images/7.jpg');
+  background-image: url('./assets/7.jpg');
   filter: blur(100px);
   /* Safari 6.0 - 9.0 */
   -webkit-filter: blur(5px);

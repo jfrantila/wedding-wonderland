@@ -65,15 +65,15 @@ export default {
 
 <style scoped>
 .picture1 {
-    background-image: url('../images/5.jpg')
+    background-image: url('../assets/5.jpg')
 }
 
 .picture2 {
-    background-image: url('../images/13.jpg');
+    background-image: url('../assets/13.jpg');
 }
 
 .picture3 {
-    background-image: url('../images/11.jpg');
+    background-image: url('../assets/11.jpg');
 }
 
 .services-div {

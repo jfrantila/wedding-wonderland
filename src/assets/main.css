@@ -14,7 +14,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: main-font!important;
   font-size: 25px !important;
-  background-image: url('../images/vintage-wallpaper-background.jpg');
+  background-image: url('../assets/vintage-wallpaper-background.jpg');
 }
 
 #app {

@@ -21,7 +21,7 @@ export default {
 div {
     font-family: romantic;
     font-size: 30px;
-    line-height: 0.5;
+    line-height: 0.8;
     padding-bottom: 1rem;
     padding-top: 4rem;
     margin-top: 3rem;

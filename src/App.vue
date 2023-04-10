@@ -2,40 +2,26 @@
 import Navigation from './components/Navigation.vue'
 import { useBackgroundImage } from './stores/background'
 import Footer from './components/Footer.vue'
-import Services from './views/Services.vue'
+import Services from './components/Services.vue'
+import Home from './views/Home.vue'
 
 export default {
   name: 'App',
-  components: { Navigation, Footer, Services },
+  components: { Home, Navigation, Footer, Services },
   data() {
     return { blurBackground: true }
   },
   methods: {
     scrollTo(endpointId) {
-      window.document.querySelector(`#${endpointId}`).scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' })
+      window.document.querySelector(`#${endpointId}`).scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'start' })
     }
   },
-  computed: {
-    background() {
-      this.blurBackground = useBackgroundImage().$state.backgroundImg
-      return useBackgroundImage().$state.backgroundImg ? 'wrapper' : 'beige-wrapper'
-    },
-    blurredBackground() {
-      return useBackgroundImage().$state.backgroundImg ? 'blur-image' : undefined
-    }
-  }
 }
 </script>
 
 <template>
-  <div v-if="blurBackground" class="blur-image"></div>
-  <div :class="background">
-    <Navigation @scroll-to="(endpointId) => scrollTo(endpointId)" />
-    <!-- Views -->
-    <div :class="blurBackground ? 'abstract-div' : null">
-      <router-view />
-    </div>
-  </div>
+  <Navigation @scroll-to="(endpointId) => scrollTo(endpointId)" />
+  <Home />
   <Services />
   <Footer />
 </template>
@@ -58,17 +44,6 @@ export default {
   width: 100%;
   height: 100%;
   padding: 2rem;
-}
-
-.blur-image {
-  background-image: url('./assets/7.jpg');
-  filter: blur(100px);
-  /* Safari 6.0 - 9.0 */
-  -webkit-filter: blur(5px);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
 }
 
 .abstract-div {

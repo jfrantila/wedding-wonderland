@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+/* import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import ContactInfo from '../views/ContactInfo.vue'
 import Services from '../views/Services.vue'
@@ -25,3 +25,4 @@ const router = createRouter({
 })
 
 export default router
+ */

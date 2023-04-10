@@ -1,6 +1,6 @@
 <template>
-    <div id="services" class="container abstract-div services-div">
-        <h2>What I Offer</h2>
+    <div id="services" class="services-div">
+        <h2 class="heading">What I Offer</h2>
         <div class="cols">
             <div class="col">
                 <div class="container">
@@ -53,13 +53,7 @@
 
 <script>
 export default {
-    name: 'Services',
-    methods: {
-        toggleHover(e) {
-            console.log(e)
-            e.target.classList.toggle('hover')
-        }
-    }
+    name: 'Services'
 }
 </script>
 
@@ -70,6 +64,9 @@ export default {
 
 .picture2 {
     background-image: url('../assets/13.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .picture3 {
@@ -77,7 +74,7 @@ export default {
 }
 
 .services-div {
-    padding-top: 4rem;
+    padding-top: 2rem;
     width: 100vw;
     height: 100vh;
     -webkit-box-sizing: border-box;
@@ -208,9 +205,36 @@ export default {
     font-weight: 300;
 }
 
-@media screen and (max-width: 48rem) {
+.heading {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+@media screen and (max-width: 57rem) {
+    .cols {
+        display: block;
+    }
+
     .col {
-        width: calc(50% - 2rem);
+        width: 100%;
+        margin: 0 0 2rem 0;
+    }
+
+    .heading {
+        padding-top: 0;
+        padding-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 48rem) {
+
+    .cols {
+        display: block;
+    }
+
+    .col {
+        width: 100%;
+        margin: 0 0 2rem 0;
     }
 }
 

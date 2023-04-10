@@ -1,5 +1,5 @@
 <template>
-    <nav :class="containerClass">
+    <nav class="nav-container">
         <button @click="toggleMenubar" class="menu-bar navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navi" :title="menuBarOpen ? 'Close menu' : 'Open menu'" aria-controls="navi"
             aria-expanded="false" aria-label="Toggle Menu">
@@ -8,11 +8,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navi">
             <ul class="nav">
-                <NavItem navText="Home" viewPath="/" @click-nav="changeToImage" />
+                <!-- <NavItem navText="Home" viewPath="/" @click-nav="changeToImage" /> -->
                 <button @click="$emit('scroll-to', 'home')" class="nav-link active menu-nav">Home</button>
                 <!-- <NavItem navText="Services" viewPath="/services" @click-nav="changeToBeige" /> -->
                 <button @click="$emit('scroll-to', 'services')" class="nav-link active menu-nav">Services</button>
-                <NavItem navText="Contact" viewPath="/contact-info" @click-nav="changeToBeige" />
+                <!-- <NavItem navText="Contact" viewPath="/contact-info" @click-nav="changeToBeige" /> -->
                 <button @click="openPortfolio" class="nav-link active menu-nav">Photo Gallery</button>
             </ul>
         </div>
@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import { useBackgroundImage } from '../stores/background'
 import NavItem from './NavItem.vue'
 import NavIcon from './NavIcon.vue'
 import PhotoSwipe from 'photoswipe'
@@ -148,22 +147,11 @@ export default {
         toggleMenubar() {
             this.menuBarOpen = !this.menuBarOpen
         },
-        changeToBeige() {
-            useBackgroundImage().changeBackgroundImageToBeige()
-        },
-        changeToImage() {
-            useBackgroundImage().changeBackgroundImageToImage()
-        },
         openPortfolio() {
             const pswp = new PhotoSwipe(this.options)
             pswp.init()
         }
     },
-    computed: {
-        containerClass() {
-            return useBackgroundImage().$state.backgroundImg ? 'nav-container' : 'nav-container dark-text'
-        }
-    }
 }
 </script>
 
@@ -182,17 +170,36 @@ button.menu-bar {
 
 /* Whole navigation container */
 .nav-container {
-    float: left;
     font-family: menu-font;
     padding: 1rem;
     display: block;
     text-align: start;
-    position: sticky !important;
+    position: fixed;
     top: 0;
+    z-index: 5;
     color: rgba(255, 255, 255, 0.719);
 }
 
 .dark-text {
     color: #302416be;
 }
+
+@media (min-width: 57rem) {
+    .nav-container {
+        margin-left: 1.5rem;
+        margin-top: 0.5rem;
+    }
+}
+
+/*@media (max-width: 48rem) {
+    .nav-container {
+        margin-left: 0;
+        margin-top: 0.7rem;
+        display: flex;
+    }
+
+    .nav {
+        display: flex !important;
+    }
+}*/
 </style>

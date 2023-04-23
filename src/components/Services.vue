@@ -79,9 +79,8 @@ export default {
 }
 
 .services-div {
-    padding-top: 2rem;
+    padding-top: 3rem;
     width: 100vw;
-    height: 100vh;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     align-self: center;
@@ -251,6 +250,10 @@ export default {
     .col {
         width: 100%;
         margin: 0 0 2rem 0;
+    }
+
+    .back {
+        font-size: 1.2rem !important;
     }
 }
 </style>

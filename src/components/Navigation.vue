@@ -198,6 +198,16 @@ button.menu-bar {
     }
 }
 
+@media screen and (max-width: 32rem) {
+    .nav-container {
+        font-size: 20px;
+    }
+
+    span {
+        font-size: 20px !important;
+    }
+}
+
 /*@media (max-width: 48rem) {
     .nav-container {
         margin-left: 0;

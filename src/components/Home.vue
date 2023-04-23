@@ -43,6 +43,17 @@ export default {
     color: rgb(49, 40, 35);
 }
 
+@media screen and (max-width: 32rem) {
+    h1 {
+        font-size: 30px !important;
+    }
+
+    i {
+        font-size: 20px !important;
+    }
+
+}
+
 h1 {
     font-size: 50px;
 }

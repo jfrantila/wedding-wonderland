@@ -8,8 +8,8 @@
             Let’s make magic happen together. <br />
             My services are available in English, Finnish and Russian languages.</p>
         <InstagramLogo />
-        <h2>Contact Me</h2>
-        <p>TODO: Mailing service</p>
+        <h2 class="contact-me">Contact Me</h2>
+        <p>Email: milla.sinitsyna@gmail.com</p>
     </div>
 </template>
 
@@ -24,10 +24,12 @@ export default {
 <style scoped>
 .contact-info-div {
     height: 100vh;
+    font-size: 1.2rem;
+    padding-top: 1rem;
+    height: max-content;
 }
 
-h2 {
-    padding-bottom: 2rem;
+.contact-me {
     padding-top: 2rem;
 }
 </style>

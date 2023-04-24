@@ -1,29 +1,20 @@
 <script>
 import Navigation from './components/Navigation.vue'
 import Footer from './components/Footer.vue'
-import Services from './components/Services.vue'
 import Home from './components/Home.vue'
-import ContactInfo from './components/ContactInfo.vue'
 
 export default {
   name: 'App',
-  components: { Home, Navigation, Footer, Services, ContactInfo },
+  components: { Home, Navigation, Footer },
   data() {
     return { darkNavMenu: false }
-  },
-  methods: {
-    scrollTo(endpointId) {
-      window.document.querySelector(`#${endpointId}`).scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'start' })
-    }
   },
 }
 </script>
 
 <template>
-  <Navigation @scroll-to="(endpointId) => scrollTo(endpointId)" />
-  <Home />
-  <Services />
-  <ContactInfo />
+  <Navigation />
+  <router-view></router-view>
   <Footer />
 </template>
 

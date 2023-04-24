@@ -2,7 +2,7 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useBackgroundImage = defineStore('background', () => {
-  const backgroundImg = ref(true)
+  const backgroundImg = ref(false)
 
   function changeBackgroundImageToBeige() {
     backgroundImg.value = false

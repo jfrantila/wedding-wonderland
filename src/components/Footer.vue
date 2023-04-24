@@ -1,37 +1,57 @@
 <template>
     <div class="footer">
-        <p>Milla Sini wedding and family photographer from Finland. I am here to create sweet colorful memories of your
-            special day.</p>
+        <h4>Milla Sinitsyn Wedding Photography</h4>
+        <p>Milla Sini wedding and family photographer from Finland. <br /> I am here to create sweet colorful memories of
+            your special day.<br />millasini.foto@gmail.com</p>
+        <ul class="nav">
+            <li class="nav-item"><a href="https://www.facebook.com/millasini" class="nav-link pl-0"><i
+                        class="fa fa-facebook fa-lg"></i></a></li>
+            <li class="nav-item"><a href="https://www.instagram.com/millasini_photowonderland" class="nav-link"><i
+                        class="fa fa-instagram fa-lg"></i></a></li>
+        </ul>
     </div>
 </template>
 
 <script>
-import { useBackgroundImage } from '../stores/background';
 export default {
-    name: 'Footer',
-    computed: {
-        footerClass() {
-            return useBackgroundImage().$state.backgroundImg ? 'footer' : 'footer-other'
-        }
-    }
+    name: 'Footer'
 }
 </script>
 
 <style scoped>
+.nav {
+    display: flex !important;
+}
+
 .footer {
-    font-family: romantic;
-    font-size: 25px;
+    font-size: 15px;
     line-height: 1.5rem;
     padding-bottom: 1rem;
-    padding-top: 1rem;
+    padding-top: 2rem;
     margin-top: 3rem;
+    color: grey;
+    background: #292929;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    position: relative;
+    bottom: 0;
     width: 100%;
-    color: rgb(49, 40, 35);
+}
+
+h4 {
+    font-size: 30px;
+    font-family: romantic;
 }
 
 @media screen and (max-width: 32rem) {
+    h4 {
+        font-size: 25px;
+    }
+
     .footer {
-        font-size: 15px !important;
+        font-size: 12px !important;
     }
 }
 </style>

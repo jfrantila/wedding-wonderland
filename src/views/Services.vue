@@ -81,6 +81,7 @@ export default {
 .services-div {
     padding-top: 3rem;
     width: 100vw;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     align-self: center;
 }
@@ -222,6 +223,11 @@ export default {
         width: 100%;
         margin: 0 0 2rem 0;
     }
+
+    .heading {
+        padding-top: 0;
+        padding-bottom: 1rem;
+    }
 }
 
 @media screen and (max-width: 48rem) {
@@ -233,10 +239,6 @@ export default {
     .col {
         width: 100%;
         margin: 0 0 2rem 0;
-    }
-
-    .services-div {
-        padding-top: 5rem;
     }
 }
 

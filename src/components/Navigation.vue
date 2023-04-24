@@ -8,16 +8,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navi">
             <ul class="nav">
-                <button @click="handleClick('home', false)" class="nav-link active menu-nav">Home</button>
-                <button @click="handleClick('services', false)" class="nav-link active menu-nav">Services</button>
-                <button @click="handleClick('contact-info', true)" class="nav-link active menu-nav">Contact</button>
-                <button @click="openPortfolio" class="nav-link active menu-nav">Photo Gallery</button>
+                <router-link to="/" @click="changeToBeige(false)" class="nav-link active menu-nav">Home</router-link>
+                <router-link to="services" @click="changeToBeige(true)"
+                    class="nav-link active menu-nav">Services</router-link>
+                <router-link to="contact-info" @click="changeToBeige(true)"
+                    class="nav-link active menu-nav">Contact</router-link>
+                <button @click="openPortfolio" class="nav-link active menu-nav">Gallery</button>
             </ul>
         </div>
     </nav>
 </template>
 
 <script>
+import { useBackgroundImage } from '../stores/background'
 import NavItem from './NavItem.vue'
 import NavIcon from './NavIcon.vue'
 import PhotoSwipe from 'photoswipe'
@@ -42,7 +45,7 @@ export default {
     components: { NavItem, NavIcon },
     data() {
         return {
-            darkNavMenu: false,
+            darkNavMenu: true,
             menuBarOpen: false,
             options: {
                 index: 0,
@@ -150,9 +153,9 @@ export default {
             const pswp = new PhotoSwipe(this.options)
             pswp.init()
         },
-        handleClick(endpoint, changeColor) {
-            this.darkNavMenu = changeColor
-            this.$emit('scroll-to', endpoint)
+        changeToBeige(value) {
+            this.darkNavMenu = value
+            useBackgroundImage().changeBackgroundImageToImage()
         }
     },
 }
@@ -175,16 +178,21 @@ button.menu-bar {
     color: rgba(255, 255, 255, 0.719) !important;
 }
 
+.navbar-collapse {
+    display: flex;
+}
+
 /* Whole navigation container */
 .nav-container {
+    align-self: center !important;
     font-family: menu-font;
-    padding: 1rem;
-    display: block;
-    text-align: start;
+    padding-left: 1.5rem;
+    padding-top: 0.5rem;
     position: fixed;
+    display: flex;
     top: 0;
     z-index: 5;
-    color: rgba(255, 255, 255, 0.719);
+    /*color: rgba(255, 255, 255, 0.719);*/
 }
 
 .dark {
@@ -193,8 +201,15 @@ button.menu-bar {
 
 @media (min-width: 57rem) {
     .nav-container {
-        margin-left: 1.5rem;
-        margin-top: 0.5rem;
+        margin-left: 0.5rem;
+        margin-top: 1rem;
+    }
+}
+
+@media (min-width: 43rem) {
+    .nav-container {
+        margin-left: 0.5rem;
+        margin-top: 1rem;
     }
 }
 
@@ -207,16 +222,4 @@ button.menu-bar {
         font-size: 20px !important;
     }
 }
-
-/*@media (max-width: 48rem) {
-    .nav-container {
-        margin-left: 0;
-        margin-top: 0.7rem;
-        display: flex;
-    }
-
-    .nav {
-        display: flex !important;
-    }
-}*/
 </style>

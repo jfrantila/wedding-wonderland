@@ -6,11 +6,17 @@
             <i>Wedding photography</i>
         </div>
     </div>
+    <Services />
+    <ContactInfo />
 </template>
 
 <script>
+import Services from './Services.vue';
+import ContactInfo from './ContactInfo.vue';
+
 export default {
     name: 'Home',
+    components: { Services, ContactInfo }
 }
 </script>
 
@@ -46,10 +52,21 @@ export default {
 @media screen and (max-width: 32rem) {
     h1 {
         font-size: 30px !important;
+        padding-top: 1.2rem;
     }
 
     i {
         font-size: 20px !important;
+    }
+
+    .wrapper {
+        height: 95%;
+        width: 90%;
+        top: 2.5%;
+        left: 5%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
 }

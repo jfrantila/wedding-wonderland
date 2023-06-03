@@ -62,6 +62,13 @@ export default {
 
 }
 
+@media screen and (max-width: 32rem) {
+    .picturerow {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
 img {
     width: 100%;
     overflow: hidden;

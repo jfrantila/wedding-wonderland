@@ -29,7 +29,7 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .wrapper {
@@ -47,6 +47,7 @@ export default {
 .home-div {
     padding-top: 2rem;
     color: rgba(49, 40, 35, 0.71);
+
 }
 
 @media screen and (min-width: 42rem) {

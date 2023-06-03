@@ -8,19 +8,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navi">
             <ul class="nav">
-                <router-link to="/" @click="changeToBeige(false)" class="nav-link active menu-nav">Home</router-link>
-                <router-link to="services" @click="changeToBeige(true)"
-                    class="nav-link active menu-nav">Services</router-link>
-                <router-link to="contact-info" @click="changeToBeige(true)"
-                    class="nav-link active menu-nav">Contact</router-link>
-                <button @click="openPortfolio" class="nav-link active menu-nav">Gallery</button>
+                <router-link to="/" class="nav-link menu-nav">Home</router-link>
+                <router-link to="services" class="nav-link menu-nav">Services</router-link>
+                <router-link to="contact-info" class="nav-link menu-nav">Contact</router-link>
+                <button @click="openPortfolio" class="nav-link menu-nav">Gallery</button>
             </ul>
         </div>
     </nav>
 </template>
 
 <script>
-import { useBackgroundImage } from '../stores/background'
 import NavItem from './NavItem.vue'
 import NavIcon from './NavIcon.vue'
 import PhotoSwipe from 'photoswipe'
@@ -45,7 +42,6 @@ export default {
     components: { NavItem, NavIcon },
     data() {
         return {
-            darkNavMenu: true,
             menuBarOpen: false,
             options: {
                 index: 0,
@@ -153,10 +149,6 @@ export default {
             const pswp = new PhotoSwipe(this.options)
             pswp.init()
         },
-        changeToBeige(value) {
-            this.darkNavMenu = value
-            useBackgroundImage().changeBackgroundImageToImage()
-        }
     },
 }
 </script>
@@ -173,15 +165,9 @@ button.menu-bar {
     font-size: 28px;
 }
 
-.menu-bar.light-hover :hover {
-    color: rgba(180, 131, 150, 0.527) !important;
-}
-
-.menu-bar.dark-hover :hover {
-    color: rgba(255, 255, 255, 0.719) !important;
-}
-
-.light {
+.menu-bar.light-hover :hover,
+.light,
+.router-link-active {
     color: rgba(180, 131, 150, 0.527) !important;
 }
 

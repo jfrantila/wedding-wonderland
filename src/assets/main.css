@@ -16,6 +16,12 @@ body {
   background-image: url('../assets/vintage-wallpaper-background.jpg');
 }
 
+@media screen and (max-width: 32rem) {
+    body {
+      font-size: 13px!important;
+    }
+}
+
 #app {
   display: flex;
   flex-direction: column;

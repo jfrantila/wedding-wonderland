@@ -14,23 +14,13 @@ export default {
 
 <template>
   <Navigation />
-  <router-view></router-view>
+  <div class="pages">
+    <router-view></router-view>
+  </div>
   <Footer />
 </template>
 
 <style>
-.wrapper {
-  background-image: url('./assets/7.jpg');
-  position: absolute;
-  height: 85%;
-  width: 90%;
-  top: 8%;
-  left: 5%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .abstract-div {
   text-align: center;
   width: 100%;
@@ -38,11 +28,7 @@ export default {
   margin: 0;
 }
 
-.basic-div {
-  padding-top: 2rem;
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  height: 100%;
+.pages {
+  min-height: calc(100vh - 14rem);
 }
 </style>

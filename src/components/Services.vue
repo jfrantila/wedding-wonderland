@@ -120,9 +120,6 @@ export default {
 }
 
 .back {
-    background: #000;
-    background: -moz-linear-gradient(45deg, #464a4d44 0%, #3f3b3b 100%);
-    background: -webkit-linear-gradient(45deg, #cedce7 0%, #000 100%);
     background: linear-gradient(45deg, #443f3cd8 0%, #3d332ece 100%);
 }
 
@@ -210,8 +207,8 @@ export default {
 }
 
 .heading {
-    padding-bottom: 2rem;
-    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+    padding-top: 1rem;
 }
 
 @media screen and (max-width: 57rem) {

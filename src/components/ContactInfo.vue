@@ -1,7 +1,6 @@
 <template>
-    <div :class="['abstract-div', 'contact-info-div', isFooter ? 'footer' : null, isOnHome ? 'mt-2' : 'mt-4',]"
-        id="contact-info">
-        <h2>Bio</h2>
+    <div :class="['contact-info-div', isOnHome ? 'pt-2' : 'pt-5 mt-4 bottom',]" id="contact-info">
+        <h2 class="heading">Bio</h2>
         <p>
             Hello! I am Milla, a wedding and family photographer located in Helsinki, Finland. <br />
             I love real emotions and pure bright colours. <br />
@@ -18,21 +17,13 @@ export default {
     name: 'ContantInfo',
     props: {
         isOnHome: Boolean
-    },
-    methods: {
-        isFooter() {
-            return this.$store.state.background
-        }
     }
 }
 </script>
 
 <style scoped>
 .contact-info-div {
-    font-size: 1.2rem;
-}
-
-.contact-me {
-    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 </style>

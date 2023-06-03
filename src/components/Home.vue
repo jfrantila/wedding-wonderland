@@ -8,15 +8,17 @@
     </div>
     <Services :isOnHome="true" />
     <ContactInfo :isOnHome="true" />
+    <PictureWall />
 </template>
 
 <script>
 import Services from './Services.vue';
 import ContactInfo from './ContactInfo.vue';
+import PictureWall from './PictureWall.vue'
 
 export default {
     name: 'Home',
-    components: { Services, ContactInfo }
+    components: { Services, ContactInfo, PictureWall }
 }
 </script>
 

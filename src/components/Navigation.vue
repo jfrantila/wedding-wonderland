@@ -36,6 +36,12 @@ import Photo12 from '../assets/12.jpg'
 import Photo13 from '../assets/13.jpg'
 import Photo14 from '../assets/14.jpg'
 import Photo15 from '../assets/15.jpg'
+import Photo16 from '../assets/16.jpg'
+import Photo17 from '../assets/17.jpg'
+import Photo18 from '../assets/18.jpg'
+import Photo19 from '../assets/19.jpg'
+import Photo20 from '../assets/20.jpg'
+import Photo21 from '../assets/21.jpg'
 
 export default {
     name: 'Navigation',
@@ -101,6 +107,12 @@ export default {
                         alt: 'image 5',
                     },
                     {
+                        src: Photo16,
+                        width: 1280,
+                        height: 852,
+                        alt: 'image 16',
+                    },
+                    {
                         src: Photo8,
                         width: 1502,
                         height: 1000,
@@ -135,6 +147,36 @@ export default {
                         width: 4928,
                         height: 3280,
                         alt: 'image 6',
+                    },
+                    {
+                        src: Photo17,
+                        width: 1502,
+                        height: 1000,
+                        alt: 'image 17',
+                    },
+                    {
+                        src: Photo18,
+                        width: 3243,
+                        height: 4872,
+                        alt: 'image 18',
+                    },
+                    {
+                        src: Photo19,
+                        width: 3280,
+                        height: 4928,
+                        alt: 'image 19',
+                    },
+                    {
+                        src: Photo20,
+                        width: 5299,
+                        height: 3533,
+                        alt: 'image 20',
+                    },
+                    {
+                        src: Photo21,
+                        width: 2694,
+                        height: 4047,
+                        alt: 'image 21',
                     },
                 ],
                 showHideAnimationType: 'none'

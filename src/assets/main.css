@@ -6,14 +6,13 @@
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: main-font!important;
-  font-size: 25px !important;
+  font-family: font-1;
+  font-size: 17px!important;
   background-image: url('../assets/vintage-wallpaper-background.jpg');
 }
 
@@ -31,12 +30,11 @@ body {
 }
 
 @font-face {
-  font-family: 'main-font';
-  src: url('./fonts/ZtYagloThin-3z37p.ttf') format('truetype');
-}
-
-@font-face {
   font-family: 'menu-font';
   src: url('./fonts/Garineldono01-KGD7.otf') format('truetype');
 }
 
+@font-face {
+  font-family: 'font-1';
+  src: url('./fonts/Courthes-BF6478340908db5.otf') format('truetype');
+}

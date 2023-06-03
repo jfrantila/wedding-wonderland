@@ -1,10 +1,10 @@
 <template>
-    <nav :class="['nav-container', darkNavMenu ? 'dark' : null]">
-        <button @click="toggleMenubar" :class="['menu-bar', 'navbar-toggler', darkNavMenu ? 'dark-hover' : 'light-hover']"
-            type="button" data-bs-toggle="collapse" data-bs-target="#navi" :title="menuBarOpen ? 'Close menu' : 'Open menu'"
+    <nav class="nav-container">
+        <button @click="toggleMenubar" :class="['menu-bar', 'navbar-toggler', menuBarOpen ? 'light' : 'dark']" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navi" :title="menuBarOpen ? 'Close menu' : 'Open menu'"
             aria-controls="navi" aria-expanded="false" aria-label="Toggle Menu">
             <NavIcon />
-            <span style="verticalAlign: sub">{{ menuBarOpen ? '' : 'Menu' }}</span>
+            <span>{{ menuBarOpen ? '' : 'Menu' }}</span>
         </button>
         <div class="collapse navbar-collapse" id="navi">
             <ul class="nav">
@@ -162,12 +162,15 @@ export default {
 </script>
 
 <style>
+span {
+    vertical-align: text-bottom;
+}
+
 /* Menu icon and Menu text */
 button.menu-bar {
     background: none;
     border: none;
     font-size: 28px;
-    padding-left: 0;
 }
 
 .menu-bar.light-hover :hover {
@@ -178,6 +181,10 @@ button.menu-bar {
     color: rgba(255, 255, 255, 0.719) !important;
 }
 
+.light {
+    color: rgba(180, 131, 150, 0.527) !important;
+}
+
 .navbar-collapse {
     display: flex;
 }
@@ -186,7 +193,6 @@ button.menu-bar {
 .nav-container {
     align-self: center !important;
     font-family: menu-font;
-    padding-left: 1.5rem;
     padding-top: 0.5rem;
     position: fixed;
     display: flex;
@@ -199,27 +205,25 @@ button.menu-bar {
     color: #302416be !important;
 }
 
-@media (min-width: 57rem) {
+@media (min-width: 32rem) {
     .nav-container {
-        margin-left: 0.5rem;
-        margin-top: 1rem;
+        margin-top: 0.8rem;
+        font-size: 23px;
     }
-}
 
-@media (min-width: 43rem) {
-    .nav-container {
-        margin-left: 0.5rem;
-        margin-top: 1rem;
+    svg {
+        margin-bottom: 8px;
     }
 }
 
 @media screen and (max-width: 32rem) {
     .nav-container {
         font-size: 20px;
+        padding-top: 20px;
     }
 
     span {
-        font-size: 20px !important;
+        font-size: 23px !important;
     }
 }
 </style>

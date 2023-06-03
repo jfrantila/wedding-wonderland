@@ -6,8 +6,8 @@
             <i>Wedding photography</i>
         </div>
     </div>
-    <Services />
-    <ContactInfo />
+    <Services :isOnHome="true" />
+    <ContactInfo :isOnHome="true" />
 </template>
 
 <script>
@@ -45,18 +45,20 @@ export default {
 }
 
 .home-div {
-    padding-top: 1.5rem;
-    color: rgb(49, 40, 35);
+    padding-top: 2rem;
+    color: rgba(49, 40, 35, 0.71);
+}
+
+@media screen and (min-width: 42rem) {
+    i {
+        font-size: 20px !important;
+    }
 }
 
 @media screen and (max-width: 32rem) {
     h1 {
         font-size: 30px !important;
         padding-top: 1.2rem;
-    }
-
-    i {
-        font-size: 20px !important;
     }
 
     .wrapper {

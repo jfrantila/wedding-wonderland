@@ -1,5 +1,6 @@
 <template>
-    <div :class="['abstract-div', 'contact-info-div', isFooter ? 'footer' : null]" id="contact-info">
+    <div :class="['abstract-div', 'contact-info-div', isFooter ? 'footer' : null, isOnHome ? 'mt-2' : 'mt-4',]"
+        id="contact-info">
         <h2>Bio</h2>
         <p>
             Hello! I am Milla, a wedding and family photographer located in Helsinki, Finland. <br />
@@ -15,9 +16,11 @@
 <script>
 export default {
     name: 'ContantInfo',
+    props: {
+        isOnHome: Boolean
+    },
     methods: {
         isFooter() {
-            console.log(this.$store.state.background)
             return this.$store.state.background
         }
     }
@@ -27,10 +30,9 @@ export default {
 <style scoped>
 .contact-info-div {
     font-size: 1.2rem;
-    padding-top: 4rem;
 }
 
 .contact-me {
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 </style>

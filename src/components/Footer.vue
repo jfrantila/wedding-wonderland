@@ -1,5 +1,5 @@
 <template>
-    <div class="footer">
+    <div :class="[isHomePage ? 'relative' : 'absolute', 'footer']">
         <h4>Milla Sinitsyn Wedding Photography</h4>
         <p>Milla Sini wedding and family photographer from Finland. <br /> I am here to create sweet colorful memories of
             your special day.<br />millasini.foto@gmail.com</p>
@@ -14,13 +14,24 @@
 
 <script>
 export default {
-    name: 'Footer'
+    name: 'Footer',
+    data() {
+        return { isHomePage: true }
+    }
 }
 </script>
 
 <style scoped>
 .nav {
     display: flex !important;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
 }
 
 .footer {
@@ -31,11 +42,9 @@ export default {
     margin-top: 3rem;
     color: grey;
     background: #292929;
-    font-family: sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center !important;
-    position: relative;
     bottom: 0;
     width: 100%;
 }

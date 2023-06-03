@@ -1,5 +1,5 @@
 <template>
-    <div id="services" class="services-div">
+    <div id="services" :class="[isOnHome ? null : 'mt-4', 'services-div']">
         <h2 class="heading">What I Offer</h2>
         <div class="cols">
             <div class="col">
@@ -58,7 +58,10 @@
 
 <script>
 export default {
-    name: 'Services'
+    name: 'Services',
+    props: {
+        isOnHome: Boolean
+    }
 }
 </script>
 
@@ -79,10 +82,10 @@ export default {
 }
 
 .services-div {
-    padding-top: 3rem;
     width: 100vw;
     box-sizing: border-box;
     align-self: center;
+    padding-top: 2rem;
 }
 
 .cols {
@@ -114,7 +117,6 @@ export default {
     height: auto;
     border-radius: 10px;
     color: #fff;
-    font-size: 1.5rem;
 }
 
 .back {
@@ -185,7 +187,6 @@ export default {
 }
 
 .front .inner p {
-    font-size: 2rem;
     margin-bottom: 2rem;
     position: relative;
 }
@@ -234,10 +235,6 @@ export default {
         width: 100%;
         margin: 0 0 2rem 0;
     }
-
-    .services-div {
-        padding-top: 5rem;
-    }
 }
 
 @media screen and (max-width: 32rem) {
@@ -248,10 +245,6 @@ export default {
     .col {
         width: 100%;
         margin: 0 0 2rem 0;
-    }
-
-    .back {
-        font-size: 1.2rem !important;
     }
 }
 </style>

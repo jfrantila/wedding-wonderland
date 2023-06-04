@@ -65,7 +65,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .picture1 {
     background-image: url('../assets/5.jpg')
 }
@@ -208,7 +208,7 @@ export default {
 
 .heading {
     padding-bottom: 0.5rem;
-    padding-top: 1rem;
+    padding-top: 1.5rem;
 }
 
 @media screen and (max-width: 57rem) {

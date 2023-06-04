@@ -211,6 +211,8 @@ button.menu-bar {
 .light,
 .router-link-active {
     color: rgba(180, 131, 150, 0.527) !important;
+    background: radial-gradient(transparent, rgba(47, 35, 24, 0.194));
+    border-radius: 15%;
 }
 
 .navbar-collapse {
@@ -221,16 +223,15 @@ button.menu-bar {
 .nav-container {
     align-self: center !important;
     font-family: menu-font;
-    padding-top: 0.5rem;
-    position: fixed;
+    position: absolute;
     display: flex;
     top: 0;
     z-index: 5;
-    /*color: rgba(255, 255, 255, 0.719);*/
 }
 
 .dark {
     color: #302416be !important;
+    padding-top: 5px;
 }
 
 @media (min-width: 32rem) {

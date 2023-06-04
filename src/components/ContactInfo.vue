@@ -1,5 +1,5 @@
 <template>
-    <div :class="['contact-info-div', isOnHome ? 'pt-2' : 'pt-5 mt-4 bottom',]" id="contact-info">
+    <div :class="['contact-info-div', isOnHome ? 'pt-2' : 'lower bottom',]" id="contact-info">
         <h2 class="heading">Bio</h2>
         <p>
             Hello! I am Milla, a wedding and family photographer located in Helsinki, Finland. <br />
@@ -25,5 +25,9 @@ export default {
 .contact-info-div {
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+.lower {
+    padding-top: 3.5rem;
 }
 </style>

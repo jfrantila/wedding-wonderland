@@ -120,7 +120,7 @@ export default {
 }
 
 .back {
-    background: linear-gradient(45deg, #443f3cd8 0%, #3d332ece 100%);
+    background: radial-gradient(#827267c7 0%, #3b3532ce);
 }
 
 .front:after {

@@ -78,5 +78,10 @@ export default {
 
 h1 {
     font-size: 50px;
+    font-weight: 800 !important;
+}
+
+i {
+    font-weight: 800;
 }
 </style>

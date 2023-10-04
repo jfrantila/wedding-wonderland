@@ -6,7 +6,7 @@
         <ul class="nav">
             <li class="nav-item"><a href="https://www.facebook.com/millasini" class="nav-link pl-0"><i
                         class="fa fa-facebook fa-lg"></i></a></li>
-            <li class="nav-item"><a href="https://www.instagram.com/millasini_wonderwedding/" class="nav-link"><i
+            <li class="nav-item"><a href="https://www.instagram.com/millasini_wonderwmoments/" class="nav-link"><i
                         class="fa fa-instagram fa-lg"></i></a></li>
         </ul>
     </div>

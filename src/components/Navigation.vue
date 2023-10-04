@@ -210,7 +210,6 @@ button.menu-bar {
 .menu-bar.light-hover :hover,
 .light,
 .router-link-active {
-    color: rgba(180, 131, 150, 0.527) !important;
     background: radial-gradient(transparent, rgba(47, 35, 24, 0.194));
     border-radius: 15%;
 }
@@ -222,6 +221,7 @@ button.menu-bar {
 /* Whole navigation container */
 .nav-container {
     align-self: center !important;
+    font-weight: bolder;
     font-family: menu-font;
     position: absolute;
     display: flex;
